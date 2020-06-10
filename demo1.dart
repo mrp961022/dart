@@ -979,39 +979,74 @@ import 'otherDart/Person.dart';
 // pc.add("ccc");
 // pc.printInfo();
 // }
-abstract class Cache<T> {
-  getBykey(String key);
-  void setBykey(String key, T value);
+// abstract class Cache<T> {
+//   getBykey(String key);
+//   void setBykey(String key, T value);
+// }
+
+// class FileCache<T> implements Cache<T> {
+//   @override
+//   getBykey(String key) {
+//     return null;
+//   }
+
+//   @override
+//   void setBykey(String key, T value) {
+//     print("我是文件缓存,把key为$key value为${value}写入文件中");
+//   }
+// }
+
+// class MemoryCache<T> implements Cache<T> {
+//   @override
+//   getBykey(String key) {
+//     return null;
+//   }
+
+//   @override
+//   void setBykey(String key, T value) {
+//     print("我是文件缓存,把key为$key value为${value}写入数据中");
+//   }
+// }
+
+// void main() {
+//   // 泛型接口 与泛型类类似
+//   // 数据缓存 文件缓存
+//   MemoryCache mc = new MemoryCache<Map>();
+//   mc.setBykey("name", {"name": "张三", "age": 20}); // 正确
+//   // mc.setBykey("age", 19); //错误
+// }
+// import 'otherDart/Animal.dart';
+
+// void main() {
+//   /** dart的库
+//    自定义库(把公共功能单独拿出去 用到的地方引入)
+//    系统内置库(安装dart.exe生成的库)
+//    第三方的库(托管到pub包管理系统中 下载安装到本地 然后引入)
+//    */
+//   // 自定义库 import引入
+//   Animal c = new Animal("小花", 4);
+//   // c.getInfo();
+// }
+import "dart:io";
+import "dart:convert";
+
+void main() async {
+  // 系统内置的库 import dart: 引入
+  // api接口
+  var result = await getDateFromZhihuApi();
+  print(result);
 }
 
-class FileCache<T> implements Cache<T> {
-  @override
-  getBykey(String key) {
-    return null;
-  }
-
-  @override
-  void setBykey(String key, T value) {
-    print("我是文件缓存,把key为$key value为${value}写入文件中");
-  }
-}
-
-class MemoryCache<T> implements Cache<T> {
-  @override
-  getBykey(String key) {
-    return null;
-  }
-
-  @override
-  void setBykey(String key, T value) {
-    print("我是文件缓存,把key为$key value为${value}写入数据中");
-  }
-}
-
-void main() {
-  // 泛型接口 与泛型类类似
-  // 数据缓存 文件缓存
-  MemoryCache mc = new MemoryCache<Map>();
-  mc.setBykey("name", {"name": "张三", "age": 20}); // 正确
-  // mc.setBykey("age", 19); //错误
+// api接口：https://daily.zhihu.com/story/9724725
+getDateFromZhihuApi() async {
+  // 创建HttpClient对象
+  var httpClient = new HttpClient();
+  // 创建uri对象
+  var uri = new Uri.http("daily.zhihu.com", "/story/9724725");
+  // 发起请求 等待请求
+  var request = await httpClient.getUrl(uri);
+  // 关闭请求 等待响应
+  var reponse = await request.close();
+  // 解码响应请求
+  return await reponse.transform(utf8.decoder).join();
 }
