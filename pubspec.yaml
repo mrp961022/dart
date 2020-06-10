@@ -1,0 +1,4 @@
+name: xxx 
+description: A new flutter module project.
+dependencies:
+  http: ^0.12.1

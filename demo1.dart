@@ -721,8 +721,6 @@
 // }
 
 // void main() {
-import 'otherDart/Person.dart';
-
 /**
    dart 中的对象操作符
    ? 条件运算符
@@ -1027,26 +1025,51 @@ import 'otherDart/Person.dart';
 //   Animal c = new Animal("小花", 4);
 //   // c.getInfo();
 // }
-import "dart:io";
-import "dart:convert";
+// import "dart:io";
+// import "dart:convert";
+
+// void main() async {
+//   // 系统内置的库 import dart: 引入
+//   // api接口
+//   var result = await getDateFromZhihuApi();
+//   print(result);
+// }
+
+// // api接口：https://daily.zhihu.com/story/9724725
+// getDateFromZhihuApi() async {
+//   // 创建HttpClient对象
+//   var httpClient = new HttpClient();
+//   // 创建uri对象
+//   var uri = new Uri.http("daily.zhihu.com", "/story/9724725");
+//   // 发起请求 等待请求
+//   var request = await httpClient.getUrl(uri);
+//   // 关闭请求 等待响应
+//   var reponse = await request.close();
+//   // 解码响应请求
+//   return await reponse.transform(utf8.decoder).join();
+// }
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 void main() async {
-  // 系统内置的库 import dart: 引入
-  // api接口
-  var result = await getDateFromZhihuApi();
-  print(result);
-}
+  var url = 'http://a.itying.com/api/productlist';
 
-// api接口：https://daily.zhihu.com/story/9724725
-getDateFromZhihuApi() async {
-  // 创建HttpClient对象
-  var httpClient = new HttpClient();
-  // 创建uri对象
-  var uri = new Uri.http("daily.zhihu.com", "/story/9724725");
-  // 发起请求 等待请求
-  var request = await httpClient.getUrl(uri);
-  // 关闭请求 等待响应
-  var reponse = await request.close();
-  // 解码响应请求
-  return await reponse.transform(utf8.decoder).join();
+  // Await the http get response, then decode the json-formatted response.
+  var response = await http.get(url);
+  if (response.statusCode == 200) {
+    // 成功
+    var jsonResponse = convert.jsonDecode(response.body);
+    print(jsonResponse);
+  } else {
+    // 失败
+    print('Request failed with status: ${response.statusCode}.');
+  }
 }
+// 引入第三方库
+/**
+ 1.这几个网址找到要用的库
+  https://pub.dev/packages
+  https://pub.flutter-io.cn/packages
+  https://pub.dartlang.org/flutter/
+2.根目录新建pubpec.yaml文件
+  */
