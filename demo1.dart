@@ -350,6 +350,348 @@
 // }
 // }
 
-void main(){
-  
+// void main() {
+// list的各种方法
+// List myList = ["orange", "melon", "apple"];
+// print(myList.length); // 列表长度
+// print(myList.isEmpty); // isNotEmpty 是否不为空
+// reversed 返回集合 (a,b,c) toList 则为数组
+// var newMyList = myList.reversed.toList(); // 列表倒序
+// print(newMyList);
+// myList.add("peach"); // 增加一个
+// myList.addAll(["橘子","桃子"]); // 增加多个 拼接数组
+// print(myList);
+// print(myList.indexOf("melon")); // 同js的indexOf
+// myList.remove("melon"); // 内容删除
+// print(myList);
+// myList.removeAt(1); // 索引删除
+// print(myList);
+// myList.fillRange(1, 2,'aaa'); // 索引为1到2(不包括2)的修改为aaa
+// myList.fillRange(1, 3,"是否是否是"); // 索引为1到3(不包括3)的修改为aaa
+// print(myList);
+// myList.insert(2, "peach"); // 再索引2之前插入peach
+// myList.insertAll(2, ["iterable"]); // 再索引3前插入多条数据
+// print(myList);
+
+// list转字符串
+// String str = myList.join(","); // 同js的join
+// print(str is String);
+// 字符串转list
+// var str = "香蕉-苹果-橘子";
+// print(str.split("-")); // 同js的split
+// }
+
+// void main() {
+// 使用set定义集合类型  可以对集合去重
+// var s = new Set();
+// s.add("香蕉");
+// s.add("苹果");
+// s.add("苹果");
+// print(s.toList()); // 转数组
+
+// 数组去重 for循环去重或者set
+// List myList = ["香蕉", "苹果", "苹果", "香蕉", "西瓜"];
+// var s = new Set();
+// s.addAll(myList);
+// print(s.toList());
+// }
+
+// void main() {
+// 映射类型 map类型 类似json对象
+// 两种定义方式
+// var person = {"name": "张三", "age": 20};
+// var m = new Map();
+// m["name"] = "李四";
+// m["age"] = 10;
+// print(person);
+// print(m);
+// 映射常用属性
+// print(person.keys.toList()); // 所有的key值
+// print(person.values.toList()); // 所有的value值
+// print(person.isEmpty); // 判断为空 isNotEmpty 是否不为空
+// 映射常用方法
+// person.addAll({"work":["敲代码","送外卖"],"height":150}); // 增加属性
+// person.remove("age");  // 删除属性
+// print(person);
+// print(person.containsKey("name")); // 是否有name的key
+// print(person.containsValue("张三")); // 是否有张三的value
+// }
+
+// void main() {
+// 遍历 list类型 set类型 map类型
+// List myList = [1, 2, 4, 5, 6, 2, 9, 10];
+// for (var i = 0; i < myList.length; i++) {
+//   print(myList[i]);
+// } // 或者for in
+// myList.forEach((value) {
+//   print(value);
+// }); // forEach 遍历
+// for (var i = 0; i < myList.length; i++) {
+//   myList[i] *= 2; // 修改集合内容
+// } // 或者for in
+// print(myList);
+// 另一种方式
+// var newList = myList.map((value) => value * 2).toList();
+// print(newList);
+// 返回符合条件的值
+// var newList = myList.where((value) => value > 5).toList();
+// 另一种写法
+// var newList = myList.where((value) {
+//   return value > 5;
+// }).toList();
+// print(newList);
+// var f = myList.any((value) => value > 5); // 只要集合中有满足条件的返回true
+// var f = myList.every((value) => value>5); // 每一个都满足条件才返回true
+// print(f);
+// var s = new Set();
+// s.addAll([1, 2, 3, 4444, 2221, 3322]);
+// s.forEach((value) => print(value));
+// var person = {"name": "张三", "age": 20};
+// person.forEach((key, value) => print("$key $value"));
+// }
+// void eat() {
+//   print("我是一个自定义方法");
+// }
+
+// int getNumber() {
+//   int myNum = 123;
+//   return myNum;
+// }
+
+// String getStr() {
+//   return "this is str";
+// }
+
+// List getList() {
+//   return [1, 2, 3, 4];
+// }
+
+// void main() {
+// 函数 自定义方法
+/**
+   返回类型 方法(){
+     
+   }
+   可以放在main(入口方法)里面和上面
+   外面写是全局的
+   里面写是局部作用域(注意调用写在定义后面)
+   */
+// eat();
+// print(getStr());
+// print(getList());
+// void xxx() {
+//   aaa() {
+//     print("aaa");
+//   }
+
+//   aaa(); // 正确
+// }
+
+// xxx();
+// aaa(); // 报错
+// 调用方法传参 约束入参类型
+// int addAll(int a, int b) {
+//   var sum = 0;
+//   for (var i = a; i <= b; i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// print(addAll(3, 100));
+// print(addAll("3", 100)); // 报错
+// String printUserInfo(String userName, int age) {
+//   return "姓名:$userName 年龄:$age";
+// }
+
+// print(printUserInfo("张三", 20));
+// 可选参数 放在参数最后面 可以写多个
+// String printUserInfo(String userName, [int age]) {
+//   return age != null ? "姓名:$userName 年龄:$age" : "姓名:$userName 年龄:保密";
+// }
+
+// print(printUserInfo("张三"));
+// 默认参数
+// String printUserInfo(String userName, [String sex = "男", int age]) {
+//   return age != null
+//       ? "姓名:$userName 性别:$sex 年龄:$age"
+//       : "姓名:$userName 性别:$sex 年龄:保密";
+// }
+
+// print(printUserInfo("张三"));
+// print(printUserInfo("小李", "女"));
+// 命名参数 入参是个键值对 键对应命名参数定义的名称
+// String printUserInfo(String userName, {int age, String sex = "男"}) {
+//   return age != null
+//       ? "姓名:$userName 性别:$sex 年龄:$age"
+//       : "姓名:$userName 性别:$sex 年龄:保密";
+// }
+
+// print(printUserInfo("张三", age: 20));
+// 方法当作参数传入另一个方法
+// fn1() {
+//   print("fn1");
+// }
+
+// fn2(fnName) {
+//   fnName();
+// }
+
+// fn2(fn1);
+
+// 箭头函数
+// fn1() {} // 普通方法
+// var fn2 = () => {}; // 箭头函数 要加分号 函数体如果单行可以不带大括号
+// List myList = [1, 2, 23, 44, 55, 62, 3];
+// var newList =
+//     myList.map((value) => value < 102 ? value * 10 : value).toList();
+// print(newList);
+
+// 方法相互调用
+// bool isEvenNum(int n) {
+//   // 判断是否为偶数
+//   if (n % 2 == 0) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// printNum(int n) {
+//   for (var i = 1; i <= n; i++) {
+//     if (isEvenNum(i)) {
+//       print(i);
+//     }
+//   }
+// }
+
+// printNum(10); // 1-10内所有偶数
+
+// 匿名方法 各种操作和普通方法一致
+// var printNum = () {
+//   return 1;
+// };
+// print(printNum());
+
+// 自执行方法
+// ((n) {
+//   print("我是自执行方法$n");
+// }(12));
+
+// 方法递归
+// 返回5的阶乘
+// int sum = 1;
+// fn(n) {
+//   sum *= n;
+//   if (n == 1) {
+//     return;
+//   }
+//   fn(n - 1);
+// }
+
+// fn(5);
+// print(sum);
+// 通过方法递归求1-100的和
+// int sum = 0;
+// fn(n) {
+//   sum += n;
+//   if (n == 0) {
+//     return;
+//   }
+//   fn(n - 1);
+// }
+
+// fn(100);
+// print(sum);
+// 闭包 函数嵌套函数
+// fn() {
+//   var a = 123;
+//   return () {
+//     a++;
+//     print(a);
+//   };
+// }
+
+// var b = fn();
+// b();
+// b();
+// b();
+// }
+// class Person {
+//   String name;
+//   int age;
+//   // Person(String name, int age) {
+//   //   // 默认构造函数 可以动态指定属性
+//   //   // print("这是构造函数中的方法 实例化时触发");
+//   //   this.name = name;
+//   //   this.age = age;
+//   // }
+
+//   // 构造函数简写
+//   Person(this.name, this.age);
+//   void getInfo() {
+//     print("${this.name}---${this.age}"); // 也可以直接用name age
+//   }
+
+//   void setInfo(String name, int age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+// 引入外部类
+// import 'otherDart/Person.dart';
+
+// void main() {
+// 类 对象 要在main外面写
+// var zhang = new Person();
+// zhang.setInfo("李四", 22);
+// zhang.getInfo();
+
+// 类的构造函数
+// Person p1 = new Person("李四", 19);
+// p1.getInfo();
+// Person p2 = new Person("张三", 22);
+// p2.getInfo();
+
+// 命名构造函数
+// dart中构造函数可以写多个
+// var p1 = new Person.now(); // 初始化时调用命名构造函数
+//   var p1 = new Person.setInfo("李四", 22);
+//   p1.getInfo();
+// }
+// import "otherDart/Animal.dart";
+// class Rect {
+//   num height;
+//   num width;
+//   Rect()
+//       : height = 20,
+//         width = 10 {} // 初始化操作 实例化之前执行
+//   get area {
+//     return this.height * this.width;
+//   }
+
+//   set areaHeight(int value) {
+//     this.height = value;
+//   }
+// }
+
+// void main() {
+// Animal a = new Animal("cat", 5);
+// print(a._name); // 报错 私有属性 需要抽离出文件
+// a.getInfo(); // 私有属性只能在当前类使用 可以使用类中的共有方法获取私有属性
+
+//getter setter
+// var r = new Rect(10, 20);
+// r.areaHeight = 100;
+// print("面积是${r.area}"); // 直接当作属性访问
+// }
+class Person {
+  static String name = "张三";
+  static void show() {
+    print("${Person.name}");
+  }
+}
+
+void main() {
+  // 静态属性 方法 直接在构造器上使用
+  print(Person.name);
 }
