@@ -5,6 +5,7 @@
 }
  */
 // 每一个结束都要有分号或者大括号
+
 /// 这样也可以注释
 // void 表示main方法没有返回值
 // void main() {
@@ -468,6 +469,8 @@
 
 // void main() {
 // 函数 自定义方法
+// import 'otherDart/Person.dart';
+
 /**
    返回类型 方法(){
      
@@ -684,14 +687,167 @@
 // r.areaHeight = 100;
 // print("面积是${r.area}"); // 直接当作属性访问
 // }
-class Person {
-  static String name = "张三";
-  static void show() {
-    print("${Person.name}");
-  }
-}
+
+// 静态方法不能访问非静态属性或者方法
+// class Person {
+//   static String name = "张三";
+//   int age = 20;
+//   static void show() {
+//     print("${name}");
+//     // print("${this.age}"); // 报错
+//   }
+
+//   void setInfo() {
+//     // 可以访问静态成员及非静态成员
+//     print(name); // 静态属性
+//     show(); // 调用静态方法
+//     print(this.age); // 非静态属性
+//   }
+// }
+
+// void main() {
+//   // 静态属性 方法 直接在构造器上使用
+//   // print(Person.name);
+//   var p = new Person();
+//   p.setInfo();
+// }
+// class Person {
+//   String name;
+//   int age;
+//   Person(this.name, this.age);
+//   void getInfo() {
+//     print("姓名:${this.name} 年龄:${this.age}");
+//   }
+// }
+
+// void main() {
+/**
+   dart 中的对象操作符
+   ? 条件运算符
+   as 类型转换
+   is 类型判断
+   .. 级联操作（连缀）
+   */
+// 条件运算符
+// var p = new Person("张三", 10);
+// Person p;
+// p?.getInfo(); // 如果p是null不会调用这个方法
+
+// is 类型（类）判断
+// if (p is Person) {
+//   p.name = "李四";
+// }
+// p.getInfo();
+
+// as 类型转换
+// var p1 = new Person("张三", 10);
+// (p1 as Person).getInfo();
+
+// .. 级联操作
+// Person p1 = new Person("张三1", 20);
+// p1.name = "张三";
+// p1.age = 22;
+// p1.getInfo();
+//   p1
+//     ..name = "李四" // 先执行两个赋值
+//     ..age = 30
+//     ..getInfo(); // 最后打印
+// }
+// class Person {
+//   String name;
+//   int age;
+//   Person(this.name, this.age);
+//   Person.abc(this.name, this.age);
+//   void getInfo() {
+//     print("${this.name}-------${this.age}");
+//   }
+// }
+
+// class Web extends Person {
+//   Web(String name, int age, String sex) : super.abc(name, age) {
+// super给父类的构造函数传参  可以给命名构造函数传参
+//   this.sex = sex;
+// }
+// String sex;
+// 子类中重写父类方法 建议加上override表示复写父类方法
+// @override
+// void getInfo() {
+//   print("${this.name}${this.age}岁了");
+// }
+
+//   void work() {
+//     print("${this.name}在工作");
+//     super.getInfo(); // 调用父类方法
+//   }
+
+//   void run() {
+//     print("${this.name}----${this.sex}----${this.age}");
+//   }
+// }
+
+// void main() {
+// dart继承
+//   Web w = new Web("张三", 20, "男");
+//   w.work();
+// }
+
+// abstract class Animal {
+//   // 抽象类
+//   eat(); // 抽象方法
+//   getInfo() {
+//     // 抽象类的普通方法
+//     print("sdfsfsf");
+//   }
+// }
+
+// class Dog extends Animal {
+//   @override
+//   eat() {
+//     // 子类继承抽象类 必须实现抽象方法
+//     print("小狗在吃骨头");
+//   }
+
+//   run() {
+//     print("小狗在跑");
+//   }
+// }
+
+// class Cat extends Animal {
+//   @override
+//   eat() {
+//     print("小猫在吃老鼠");
+//   }
+
+//   run() {
+//     print("小猫在跑");
+//   }
+// }
+// import 'db/allDb/mysql.dart';
+
+// void main() {
+// 抽象类 多态 接口 用于定义标准
+// Animal a =new Animal(); // 报错 抽象类不可以直接被实例化
+// 抽象类
+// Dog d = new Dog();
+// d.eat();
+// Cat c = new Cat();
+// c.run();
+
+// 多态 父类定义方法不去实现 子类去实现 每个子类不同的表现
+// 就是上一个抽象类那种 Dog 和 Cat 实现不同吃的表现
+// Animal d = new Dog();
+// d.run(); // 报错 父类没有run的抽象类
+// d.eat();
+
+// 接口 使用普通类或者抽象类定义接口 建议使用抽象类
+// 定义一个数据库 支持mysql mssql mongodb 三个类中有同样的方法
+// MySql mysql = new MySql("www.aaa.com");
+// mysql.add("dfsfsf");
+// }
+import 'db/allDb/mssql.dart';
 
 void main() {
-  // 静态属性 方法 直接在构造器上使用
-  print(Person.name);
+  MsSql ms = new MsSql("127.0.0.1");
+  ms.add("dfsfs");
+  ms.remove(111);
 }
