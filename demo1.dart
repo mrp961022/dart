@@ -933,3 +933,49 @@ import 'otherDart/Person.dart';
 // c.getInfo();
 // c.run();
 // }
+// 普通类
+// class PrintClass {
+//   List list = new List<int>();
+//   void add(int value) {
+//     this.list.add(value);
+//   }
+
+//   void printInfo() {
+//     for (var i = 0; i < this.list.length; i++) {
+//       print(this.list[i]);
+//     }
+//   }
+// }
+
+// 泛型类
+// class PrintClass<T> {
+//   List list = new List<T>();
+//   void add(T value) {
+//     this.list.add(value);
+//   }
+
+//   void printInfo() {
+//     for (var i = 0; i < this.list.length; i++) {
+//       print(this.list[i]);
+//     }
+//   }
+// }
+
+// void main() {
+// dart 中的泛型 泛型方法 泛型类 泛型接口
+// 解决对不特定类型的类型校验
+// T getData<T>(value) {
+// 泛型方法 T 返回参数  <T> 入参
+//   return value;
+// }
+
+// print(getData<int>(21)); // 调用接口定义泛型的类型
+// List<int> a = [1, 2, 3, 4]; // 只能是指定 int 类型数据
+// a.add("111"); // 增加也报错
+
+// PrintClass pc = new PrintClass<String>(); // 泛型类实例化类是指定类型
+// pc.add("aaa"); // 如果与指定类型不同会报错
+// pc.add("bbb");
+// pc.add("ccc");
+// pc.printInfo();
+// }
