@@ -979,3 +979,39 @@ import 'otherDart/Person.dart';
 // pc.add("ccc");
 // pc.printInfo();
 // }
+abstract class Cache<T> {
+  getBykey(String key);
+  void setBykey(String key, T value);
+}
+
+class FileCache<T> implements Cache<T> {
+  @override
+  getBykey(String key) {
+    return null;
+  }
+
+  @override
+  void setBykey(String key, T value) {
+    print("我是文件缓存,把key为$key value为${value}写入文件中");
+  }
+}
+
+class MemoryCache<T> implements Cache<T> {
+  @override
+  getBykey(String key) {
+    return null;
+  }
+
+  @override
+  void setBykey(String key, T value) {
+    print("我是文件缓存,把key为$key value为${value}写入数据中");
+  }
+}
+
+void main() {
+  // 泛型接口 与泛型类类似
+  // 数据缓存 文件缓存
+  MemoryCache mc = new MemoryCache<Map>();
+  mc.setBykey("name", {"name": "张三", "age": 20}); // 正确
+  // mc.setBykey("age", 19); //错误
+}
