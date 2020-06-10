@@ -840,7 +840,7 @@
 // d.eat();
 
 // 接口 使用普通类或者抽象类定义接口 建议使用抽象类
-// 定义一个数据库 支持mysql mssql mongodb 三个类中有同样的方法
+// 定义一个数据库 支持mysql mssql mongodb 三个类中有几个同样的方法
 // MySql mysql = new MySql("www.aaa.com");
 // mysql.add("dfsfsf");
 // }
