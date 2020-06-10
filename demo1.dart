@@ -721,6 +721,8 @@
 // }
 
 // void main() {
+import 'otherDart/Person.dart';
+
 /**
    dart 中的对象操作符
    ? 条件运算符
@@ -844,10 +846,90 @@
 // MySql mysql = new MySql("www.aaa.com");
 // mysql.add("dfsfsf");
 // }
-import 'db/allDb/mssql.dart';
+// import 'db/allDb/mssql.dart';
 
-void main() {
-  MsSql ms = new MsSql("127.0.0.1");
-  ms.add("dfsfs");
-  ms.remove(111);
-}
+// void main() {
+//   MsSql ms = new MsSql("127.0.0.1");
+//   ms.add("dfsfs");
+//   ms.remove(111);
+// }
+// abstract class A {
+//   String name;
+//   printA();
+// }
+
+// abstract class B {
+//   printB();
+// }
+
+// class C implements A, B {
+//   @override
+//   String name;
+
+//   @override
+//   printA() {
+//     print("printA");
+//   }
+
+//   @override
+//   printB() {
+//     print("printB");
+//   }
+// }
+
+// void main() {
+// dart中一个类实现多个接口 以及dart中的mixins
+// 实现多个接口 逗号分开
+// C c = new C();
+// c.printA();
+// }
+// class Person {
+//   String name;
+//   Person(this.name);
+//   getInfo() {
+//     print("${this.name}");
+//   }
+// }
+
+// class A {
+//   String info = "this is A";
+//   // A(); // 后面with会报错
+//   void printA() {
+//     print("printA");
+//   }
+
+//   void run() {
+//     print("Arun");
+//   }
+// }
+
+// class B {
+//   void printB() {
+//     print("printB");
+//   }
+
+//   void run() {
+//     print("Brun");
+//   }
+// }
+
+// class C extends Person with A, B {
+//   // 继承和mixins一起写
+//   C(String name) : super(name);
+// }
+
+// void main() {
+// dart中extends不支持继承两个父类
+// mixins 混入 实现类似于多继承的功能 with 关键字 作为父类不能继承于其他类
+// 作为mixins的类不能有构造函数 如果有重复的 最后面的会替换前面的
+// C c = new C("王");
+// print(c is A); // true
+// print(c is B); // true
+// print(c is C); // true
+// print(c is Person); // true
+// print(c.info);
+// c.printA();
+// c.printB();
+// c.getInfo();
+// c.run();
+// }
