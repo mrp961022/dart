@@ -107,4 +107,26 @@ List newList = ["orange", "melon", "apple"];
  users.containsValue("name"); // 是否包含指定value
 ```
 
-#### list遍历
+#### 遍历 list类型遍历  set类型遍历  map类型遍历
+```
+ // list正常使用for遍历 map遍历 与js一致
+ /**
+  另一种方式
+  List myList = [1, 2, 4, 5, 6, 2, 9, 10];
+  myList.where((value)=>value>5).toList; // 返回符合条件的
+  myList.any((value) => value > 5); // 只要集合中有满足条件的返回true
+  myList.every((value) => value>5); // 每一个都满足条件才返回true
+ */
+ // set类型遍历
+ /**
+  var s = new Set();
+  s.addAll([1, 2, 3, 4444, 2221, 3322]);
+  s.forEach((value) => print(value));
+ */
+ // map类型遍历
+ /**
+  var person = {"name": "张三", "age": 20};
+  person.forEach((key, value) => print("$key $value"));
+ */
+
+```
