@@ -431,9 +431,13 @@ dependencies:
 // dependencies: 后面跟的是所有引入的外部库
 // 使用方法根据官方写的使用
 /**
- 1.这几个网址找到要用的库
+  1.这几个网址找到要用的库
   https://pub.dev/packages
   https://pub.flutter-io.cn/packages
   https://pub.dartlang.org/flutter/
-  */
+  2.写入依赖pubspec.yaml中
+    dependencies:后面跟着写
+  3.运行put get获取远程库
+  4.看文档引入库使用
+*/
 ```
