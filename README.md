@@ -359,13 +359,81 @@ void main() {
 #### 泛型 泛型方法 泛型类 泛型接口 解决不特定类型的类型校验
 > 泛型方法
 ```
-123
+T getData<T>(value) {
+    // 泛型方法 T 返回参数 <T> 入参
+    return value;
+}
+print(getData<int>(21)); // 调用方法时定义入参类型
 ```
 > 泛型类
 ```
-123
+// List<int> a = [1,2,3,4]; // 只能add数值新 这也是一种泛型类
+class PrintClass<T> {
+    List list = new List<T>
+    void add(T value) {
+       this.list.add(value);
+    }
+    void printInfo() {
+       for (var i = 0; i < this.list.length; i++) {
+           print(this.list[i]);
+       }
+    }
+}
+void main() {
+   var pc = new PrintClass<String>(); // 泛型类实例化类是指定类型
+   pc.add("aaa"); // 如果与指定类型不同会报错
+}
 ```
 > 泛型接口
 ```
-123
+abstract class Cache<T> {
+  getBykey(String key);
+  void setBykey(String key, T value);
+}
+
+class MemoryCache<T> implements Cache<T> {
+  @override
+  getBykey(String key) {
+    return null;
+  }
+
+  @override
+  void setBykey(String key, T value) {
+    print("我是文件缓存,把key为$key value为${value}写入数据中");
+  }
+}
+void main() {
+  // 泛型接口 与泛型类类似
+  // 数据缓存
+  MemoryCache mc = new MemoryCache<Map>(); // 定义是一个map类型
+  mc.setBykey("name", {"name": "张三", "age": 20}); // 正确
+  // mc.setBykey("age", 19); //错误
+}
+```
+#### dart中的库 自定义库 系统内置库 第三方库
+> 自定义库 把公共功能单独拿出去 用到的地方import引入
+```
+// 引入后就可以使用Animal.dart里面所有的方法 类等等 注意在main外面引入
+import "otherDart/Animal.dart";
+```
+> 系统内置库
+```
+// dart: 是dart安装后生成的系统内置库 根据需要引入指定库
+import "dart:io";
+```
+> 第三方的库 托管到pub包管理系统中 下载安装到本地 然后引入
+```
+// 首先根目录新建一个pubspec.yaml文件 内容是
+name: xxx 
+description: A new flutter module project.
+dependencies:
+  http: ^0.12.1
+// dependencies: 后面跟的是所有引入的外部库
+// 使用方法根据官方写的使用
+/**
+ 1.这几个网址找到要用的库
+  https://pub.dev/packages
+  https://pub.flutter-io.cn/packages
+  https://pub.dartlang.org/flutter/
+  */
 ```
