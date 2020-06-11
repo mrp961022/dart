@@ -437,7 +437,17 @@ dependencies:
   https://pub.dartlang.org/flutter/
   2.写入依赖pubspec.yaml中
     dependencies:后面跟着写
-  3.运行put get获取远程库
+  3.运行put get获取远程库 // vscode可以自动下载
   4.看文档引入库使用
 */
+```
+#### 类的重命名
+```
+// 假设P1 P2库中都有一个Person类
+import "P1.dart";
+import "P2.dart" as lib;
+main() {
+    Person p1 = new Person();
+    lib.Person p2 = new lib.Person();
+}
 ```

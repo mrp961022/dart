@@ -1048,20 +1048,37 @@
 //   // 解码响应请求
 //   return await reponse.transform(utf8.decoder).join();
 // }
-import 'dart:convert' as convert;
-import 'package:http/http.dart' as http;
+// import 'dart:convert' as convert;
+// import 'package:http/http.dart' as http;
 
-void main() async {
-  var url = 'http://a.itying.com/api/productlist';
+// void main() async {
+//   var url = 'http://a.itying.com/api/productlist';
 
-  // Await the http get response, then decode the json-formatted response.
-  var response = await http.get(url);
-  if (response.statusCode == 200) {
-    // 成功
-    var jsonResponse = convert.jsonDecode(response.body);
-    print(jsonResponse);
-  } else {
-    // 失败
-    print('Request failed with status: ${response.statusCode}.');
-  }
+//   // Await the http get response, then decode the json-formatted response.
+//   var response = await http.get(url);
+//   if (response.statusCode == 200) {
+//     // 成功
+//     var jsonResponse = convert.jsonDecode(response.body);
+//     print(jsonResponse);
+//   } else {
+//     // 失败
+//     print('Request failed with status: ${response.statusCode}.');
+//   }
+// }
+
+// import 'package:date_format/date_format.dart';
+
+// main() {
+//   print(formatDate(DateTime(1989, 2, 21), [yyyy, '-', mm, '-', dd]));
+// }
+
+// dart 库重名
+import "otherDart/Person.dart";
+import "otherDart/Person2.dart" as lib;
+
+main() {
+  Person p1 = new Person("张三", 20);
+  lib.Person p2 = new lib.Person("张三", 20);
+  p1.getInfo();
+  p2.getInfo();
 }

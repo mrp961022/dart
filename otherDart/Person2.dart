@@ -10,6 +10,6 @@ class Person {
     this.age = age;
   }
   void getInfo() {
-    print("Person${this.name}---${this.age}"); // 也可以直接用name age
+    print("Person2${this.name}---${this.age}"); // 也可以直接用name age
   }
 }
