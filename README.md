@@ -451,3 +451,12 @@ main() {
     lib.Person p2 = new lib.Person();
 }
 ```
+#### 部分引入
+```
+import "otherDart/myMath.dart" show getName; // 只导入getName
+// import "otherDart/myMath.dart" hide getName; // 只不导入getName
+main() {
+  getName();
+  // getAge(); // 报错
+}
+```

@@ -1073,12 +1073,21 @@
 // }
 
 // dart 库重名
-import "otherDart/Person.dart";
-import "otherDart/Person2.dart" as lib;
+// import "otherDart/Person.dart";
+// import "otherDart/Person2.dart" as lib;
 
-main() {
-  Person p1 = new Person("张三", 20);
-  lib.Person p2 = new lib.Person("张三", 20);
-  p1.getInfo();
-  p2.getInfo();
-}
+// main() {
+//   Person p1 = new Person("张三", 20);
+//   lib.Person p2 = new lib.Person("张三", 20);
+//   p1.getInfo();
+//   p2.getInfo();
+// }
+
+// 部分导入
+// import "otherDart/myMath.dart" show getName;
+
+// // import "otherDart/myMath.dart" hide getName;
+// main() {
+//   getName();
+//   // getAge(); // 报错
+// }
