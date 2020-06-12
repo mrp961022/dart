@@ -484,7 +484,7 @@ PUB_HOSTED_URL:https://pub.flutter-io.cn
 ```
 ### 运行flutter doctor检测是否配置成功 根据报错解决报错
 
-### 打开Android Studio 安装flutter插件
+### 打开Android Studio 安装flutter插件 plugin中
 
 ### 安装成功后会有一个创建flutter项目 创建选第一个
 
