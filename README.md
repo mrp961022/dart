@@ -503,6 +503,7 @@ PUB_HOSTED_URL:https://pub.flutter-io.cn
 ```
 flutter run 安装app 如果安装过了就是打开app
 在这个状态下的几个命令
+  R 热加载 编译加载
   r 热加载 重新加载app
   p 显示网格 可以更好的布局
   o 切换Android和iOS
