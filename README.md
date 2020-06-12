@@ -511,3 +511,5 @@ flutter run 安装app 如果安装过了就是打开app
 ```
 
 ## 另一种方式安装 首先安装配置了flutter 然后命令行在指定目录flutter create 项目名称
+
+## vscode打开项目后有一个lib文件夹 里面就是开发者编辑的文件
