@@ -494,4 +494,4 @@ PUB_HOSTED_URL:https://pub.flutter-io.cn
 > 这里可以会比较慢 如果失败的话可以直接去官网下载压缩包解压到指定位置
 > 位置在 C:\Users\Administrator\.gradle\wrapper\dists\gradle-5.6.2-all\9st6wgf78h16so49nn74lgtbb(最后这个应该是不确定的) 如果 Administrator 中没有的话建议打开你的本机名称的一个文件夹
 
-### 连接你的android手机 打开调试(一定要打开调试 不然会失败) 然后点击 run app 等待安装app
+### 连接你的android手机或者打开虚拟机 打开调试(一定要打开调试 不然会失败) 然后点击 run app 等待安装app
