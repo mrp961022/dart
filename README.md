@@ -495,3 +495,17 @@ PUB_HOSTED_URL:https://pub.flutter-io.cn
 > 位置在 C:\Users\Administrator\.gradle\wrapper\dists\gradle-5.6.2-all\9st6wgf78h16so49nn74lgtbb(最后这个应该是不确定的) 如果 Administrator 中没有的话建议打开你的本机名称的一个文件夹
 
 ### 连接你的android手机或者打开虚拟机 打开调试(一定要打开调试 不然会失败) 然后点击 run app 等待安装app
+
+## vscode中打开项目 首先使用以上步骤新建的app项目
+
+### 安装插件 flutter和futter widget snippets
+
+### 终端命令
+```
+flutter run 安装app 如果安装过了就是打开app
+在这个状态下的几个命令
+  r 热加载 重新加载app
+  p 显示网格 可以更好的布局
+  o 切换Android和iOS
+  q 退出调试预览模式
+```
