@@ -508,3 +508,5 @@ flutter run 安装app 如果安装过了就是打开app
   o 切换Android和iOS
   q 退出调试预览模式
 ```
+
+## 另一种方式安装 首先安装配置了flutter 然后命令行在指定目录flutter create 项目名称
