@@ -460,3 +460,38 @@ main() {
   // getAge(); // 报错
 }
 ```
+
+## flutter的安装以及配置 如果配置过Android studio 可以直接看关于flutter的部分
+## 注意环境变量都是在系统变量中
+### 安装配置JDK 
+> 下载jdk https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+> 配置jdk 系统变量中在path最后增加如下代码 注意分号 如果前一个结尾有分号 删除第一个分号
+```
+;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin
+```
+### 安装 Android Studio https://developer.android.google.cn/studio
+
+### 下载配置Flutter Sdk
+> 下载flutter sdk https://flutter.dev/docs/development/tools/sdk/releases#windows 有些慢可以在清华大学的镜像下载
+> 把下载好的FlutterSDK随便减压到你想安装Sdk的目录如（E:\flutter_windows\flutter）
+> 把flutter的安装目录配置到环境变量 path 里面 E:\flutter_windows\flutter\bin 我这里是这个 根据解压的位置后面跟bin即可
+
+### 配置国内flutter镜像
+> 把下面两句配置到环境变量中 变量名:变量值 注意不要带冒号
+```
+FLUTTER_STORAGE_BASE_URL:https://storage.flutter-io.cn
+PUB_HOSTED_URL:https://pub.flutter-io.cn
+```
+### 运行flutter doctor检测是否配置成功 根据报错解决报错
+
+### 打开Android Studio 安装flutter插件
+
+### 安装成功后会有一个创建flutter项目 创建选第一个
+
+### 如果flutter jdk没有配置成功 第一个sdk的目录选一下 选择你的项目目录 一致下一步完成
+
+### file > open > 你的项目目录 > 你创建的项目名 > android 点ok 等待安装grade
+> 这里可以会比较慢 如果失败的话可以直接去官网下载压缩包解压到指定位置
+> 位置在 C:\Users\Administrator\.gradle\wrapper\dists\gradle-5.6.2-all\9st6wgf78h16so49nn74lgtbb(最后这个应该是不确定的) 如果 Administrator 中没有的话建议打开你的本机名称的一个文件夹
+
+### 连接你的android手机 打开调试(一定要打开调试 不然会失败) 然后点击 run app 等待安装app
