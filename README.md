@@ -497,7 +497,7 @@ PUB_HOSTED_URL:https://pub.flutter-io.cn
 ### 连接你的android手机或者打开虚拟机 打开调试(一定要打开调试 不然会失败) 然后点击 run app 等待安装app
 
 ## vscode中打开项目 首先使用以上步骤新建的app项目 注意连接Android手机并打开调试模式
-### 安装插件 flutter和futter widget snippets
+### 安装插件 flutter和futter widget snippets 还有 aswsome flutter snippets 
 
 ### 终端命令
 ```
